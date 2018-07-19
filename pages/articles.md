@@ -8,6 +8,7 @@ show_ad: false
 ---
 
 {% for category in site.categories %}
+<div class="divider"></div>
 <div class="category-item">
     <div class="category-title" style="color:black; font-weight:bold; font-size: 125%">
         {{ category | first | capitalize }} - 共{{ category | last | size }}篇
@@ -23,4 +24,6 @@ show_ad: false
     </div>
 </div>
 {% endfor %}
+<br />
+<div class="divider"></div>
 {% endfor %}
