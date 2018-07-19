@@ -10,8 +10,9 @@ show_ad: false
 {% for category in site.categories %}
 <div class="category-item">
     <div class="blogentry">
-        <div class="category-title" >{{ category | first | capitalize }}({共{ category | last | size }}篇)</div>
+        测试
     </div>
+    <div class="category-title" style="color:black; font-weight:bold">{{ category | first | capitalize }}</div>
     <!-- <div class="category-count">{{ category | last | size }}</div> -->
 </div>
 
