@@ -25,9 +25,6 @@ defaults:
 
 navs:
   - 
-    href: /blog/
-    label: 博客
-  - 
     href: /articles/
     label: 目录
   -
