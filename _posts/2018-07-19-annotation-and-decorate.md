@@ -1,3 +1,8 @@
+---
+title: 面向对象编程：Java注解Python装饰器
+category: Java
+---
+
 # 一.简介
 在面向切面编程中，`python`跟`java`有一个写法类似的语法，就是`@`，通过使用这个功能，两者都能达到切面编程的目的，但`python`中叫装饰器，是一种语法糖，而`java`中叫注解，是一种元数据的标注语法。下面来对比一下两者的异同。
 #### 1. 注解简介
@@ -7,17 +12,17 @@
 #### 3.个人理解 
 - `Java`的`AOP`建立在反射的基础之上，而`Python`仅仅是直接的一层函数调用。
 - `Java`注解仅仅用来存储元数据，本身是用来做标记的，你需要用这个标记干嘛，需要自己实现对应的逻辑实现，而`Python`中的装饰器是一个语法糖，它本身就涉及到一个返回函数的概念，可以说返回函数是装饰器得以实现的基石。
-```python
+~~~python
 @decorator
 def function():
     pass
-```
+~~~
 这个语法糖相当于实现的是
-```python
+~~~python
 def function():
     pass
 function = decorator(function)
-```
+~~~
 # 二.Java注解
 同`classs`和`interface`一样，注解也属于一种类型。它是在`Java SE 5.0`版本中开始引入的概念。
 
@@ -45,7 +50,7 @@ function = decorator(function)
 
 ##### @Inherited
 说的比较抽象。代码来解释。
-```java
+~~~java
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @interface Test {}
@@ -54,12 +59,12 @@ function = decorator(function)
 public class A {}
 
 public class B extends A {}
-```
+~~~
 注解`Test`被`@Inherited`修饰，之后类`A`被`Test`注解，类`B`继承`A`,类`B`也拥有`Test`这个注解。
 ##### @Repeatable
 Repeatable 自然是可重复的意思。@Repeatable 是 Java 1.8 才加进来的，所以算是一个新的特性。
 什么样的注解会多次应用呢？通常是注解的值可以同时取多个。
-```java
+~~~java
 @interface Persons {
     Person[]  value();
 }
@@ -77,45 +82,45 @@ Repeatable 自然是可重复的意思。@Repeatable 是 Java 1.8 才加进来�
 public class SuperMan{
 
 }
-```
+~~~
 ### 2.注解的属性
 注解的属性也叫做成员变量。注解只有成员变量，没有方法。注解的成员变量在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该成员变量的名字，其返回值定义了该成员变量的类型。
-```java
+~~~java
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TestAnnotation {
     int id();
     String msg();
 }
-```
+~~~
 在使用的时候，我们应该给它们进行赋值。赋值的方式是在注解的括号内以 value=”” 形式。
-```java
+~~~java
 @TestAnnotation(id=3,msg="hello annotation")
 public class Test {
 }
-```
+~~~
 如果一个注解内仅仅只有一个名字为 value 的属性时，应用这个注解时可以直接接属性值填写到括号内。
-```java
+~~~java
 public @interface Check {
     String value();
 }
 
 @Check("hi")
 int a;
-```
+~~~
 ### 3.预制注解
 `@Override`/`@SuppressWarnings`/`@SafeVarargs`/`@FunctionalInterface`，这些都是大家熟悉的，就不细说了。
 
 ### 4.自定义注解
 举个自定义注解的例子
 - 注解使用效果
-```java
+~~~java
     @SQLString(name = "NAME" , value = 30)
     private String name;
-```
+~~~
 在这里，通过使用`@FieldTypeAnnotation`，将值指定给`name`
 - 注解定义
-```java
+~~~java
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SQLString {
@@ -129,9 +134,9 @@ public @interface SQLString {
     Constraints constraint() default @Constraints;
 }
 
-```
+~~~
 - 注解行为注入
-```java
+~~~java
   public static String createTableSql(String className) {
       ...
       //获取字段上的注解
@@ -154,14 +159,14 @@ public @interface SQLString {
       }
 
     }
-```
+~~~
 
 
 
 ### 5.AOP之AspectJ
 当我们需要在不修改原来业务代码的情况下，做一些切面工作，例如插桩打点，这时候可以用到`AspectJ`，`aspectjx`默认会遍历项目编译后所有的`.class`文件和依赖的第三方库去查找符合织入条件的切点，为了提升编译效率，可以加入过滤条件指定遍历某些库或者不遍历某些库。
 举个例子，假设，我需要在`onCreate`之前插桩打`log`，可以直接提供一个切面类即可
-```java
+~~~java
 @Aspect
 public class AspectTest {
     final String TAG = AspectTest.class.getSimpleName();
@@ -175,12 +180,12 @@ public class AspectTest {
         Log.e(TAG, "method:" + methodSignature.getName());
     }
 }
-```
+~~~
 当用户运行`App`时，则会输出
-```
+~~~
 E/Aspectest: class: MainActivity
 E/Aspectest: method: onCreate
-```
+~~~
 
 
 
@@ -188,7 +193,7 @@ E/Aspectest: method: onCreate
 
 #### 1.返回函数
 由于`Python`有一个内建属性`__call__`，这个是一个很神奇的特性，只要某个类型中有`__call__`方法，我们可以把这个类型的对象当作函数来使用。这点是`Java`跟`C++`不一样的地方，Python 中的函数可以像普通变量一样当做参数传递给另外一个函数
-```python
+~~~python
 In [134]: %cpaste
 Pasting code; enter '--' alone on the line to stop or use Ctrl-D.
 :
@@ -220,10 +225,10 @@ Out[138]:
  '__setattr__',
 ]
 
-```
+~~~
 ### 2.无参装饰器
 
-```python
+~~~python
 '''使用语法糖@来装饰函数，相当于: myfunc = deco(myfunc)'''
  
 def deco(func):
@@ -239,10 +244,10 @@ def myfunc():
     print(" myfunc() called.")
  
 myfunc()
-```
+~~~
 ### 3.定参函数装饰器
 函数带参数，我们只要把装饰器最内层函数跟调用函数的参数列表保持一致即可。
-```python
+~~~python
 def deco(func):
     def _deco(a, b):
         print("before myfunc() called.")
@@ -257,10 +262,10 @@ def myfunc(a, b):
     return a + b
  
 myfunc(1, 2)
-```
+~~~
 
 ### 4.多参函数装饰器
-```python
+~~~python
 def deco(func):
     def _deco(*args, **kwargs):
         print("before %s called." % func.__name__)
@@ -281,11 +286,11 @@ def myfunc2(a, b, c):
  
 myfunc(1, 2)
 myfunc2(1, 2, 3)
-```
+~~~
 
 ### 5.带参装饰器
 装饰器带参数，则装饰器函数则变成了三层，我们需要在最外层把装饰器的参数传递进去。
-```python
+~~~python
 def deco(arg):
     def _deco(func):
         def __deco():
@@ -304,4 +309,4 @@ def myfunc2():
     print(" myfunc2() called.")
  
 myfunc()
-```
+~~~
