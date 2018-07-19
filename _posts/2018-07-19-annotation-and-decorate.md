@@ -2,9 +2,9 @@
 title: 面向对象编程：Java注解Python装饰器
 category: Java
 ---
-
-# 一.简介
 在面向切面编程中，`python`跟`java`有一个写法类似的语法，就是`@`，通过使用这个功能，两者都能达到切面编程的目的，但`python`中叫装饰器，是一种语法糖，而`java`中叫注解，是一种元数据的标注语法。下面来对比一下两者的异同。
+
+## 一.简介
 #### 1. 注解简介
 在`Java`中@表示注解，单纯标记一个`Java`语言元素。仅提供附加元数据支持，并不能实现任何操作。需要另外的`Scanner`根据元数据执行相应操作。当然用户也可以通过`@interface`来自定义注解。在运行中可以通过`classObject.getAnnotation(x)`来获取注解对象。
 #### 2.装饰器简介
@@ -27,7 +27,7 @@ def function():
 function = decorator(function)
 ~~~
 
-# 二.Java注解
+## 二.Java注解
 同`classs`和`interface`一样，注解也属于一种类型。它是在`Java SE 5.0`版本中开始引入的概念。
 
 ### 1.元注解
@@ -211,7 +211,7 @@ E/Aspectest: method: onCreate
 
 
 
-# 三.Python装饰器
+## 三.Python装饰器
 
 #### 1.返回函数
 由于`Python`有一个内建属性`__call__`，这个是一个很神奇的特性，只要某个类型中有`__call__`方法，我们可以把这个类型的对象当作函数来使用。这点是`Java`跟`C++`不一样的地方，Python 中的函数可以像普通变量一样当做参数传递给另外一个函数
