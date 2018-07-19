@@ -9,10 +9,7 @@ show_ad: false
 
 {% for category in site.categories %}
 <div class="category-item">
-    <div class="blogentry">
-        测试
-    </div>
-    <div class="category-title" style="color:black; font-weight:bold">{{ category | first | capitalize }}</div>
+    <div class="category-title" style="color:black; font-weight:bold; font-size: 125%">{{ category | first | capitalize }}</div>
     <!-- <div class="category-count">{{ category | last | size }}</div> -->
 </div>
 
@@ -25,12 +22,3 @@ show_ad: false
 </div>
 {% endfor %}
 {% endfor %}
-
-.demo_line_01 {
-    padding: 0 20px 0;
-    margin: 20px 0;
-    line-height: 1px;
-    border-left: 200px solid #ddd;
-    border-right: 200px solid #ddd;
-    text-align: center;
-}
