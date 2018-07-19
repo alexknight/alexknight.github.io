@@ -1,5 +1,5 @@
 ---
-title: 归档
+title: 目录
 layout: post
 permalink: /articles/
 dskey: laobie.github.io-articles.html
@@ -12,6 +12,7 @@ show_ad: false
     <div class="category-title">{{ category | first | capitalize }}</div>
     <div class="category-count">{{ category | last | size }}</div>
 </div>
+
 {% for post in category.last %}
 <div class="article-item">
     <div class="article-title">
