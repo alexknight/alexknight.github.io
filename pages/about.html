@@ -18,21 +18,26 @@ permalink: /about/
             {% include header.html %}
             <div class="post-content">
                 <p>本站是基于 <a href="https://pages.github.com/">GitHub Pages</a> 和 <a href="http://jekyllrb.com/">Jekyll</a> 搭建而成。</p>
-                <p>服务器用的是VULTR<a href="https://vultr.com/">，支持支付宝支付，我使用的是5$/mo的套餐</p>
-                <p>本站用途主要用做个人技术总结</p>
-                <p>个人其他技术站点：https://www.cnblogs.com/alexkn<a href="https://www.cnblogs.com/alexkn"></a></p>
-                <p>如果喜欢我的文章，可以随便打赏，我会更有动力输出优质文章</p>
-                <div id="QR" style="display: block;">
-                    <div id="wechat" style="display: inline-block">
-                        <img id="wechat_qr" src="/assets/img/def/wechat.png" alt="wdxtub WeChat Pay">
-                        <p>微信打赏</p>
+                <p>服务器用的是<a href="https://vultr.com/">VULTR</a>，支持支付宝支付，我使用的是5$/mo的套餐</p>
+                <p>本站用途主要用做个人技术总结,个人其他技术站点：<a href="https://www.cnblogs.com/alexkn">https://www.cnblogs.com/alexkn</a></p>
+                <div style="padding:0; margin: 30px auto; width: 100%; text-align: center;">
+                        <div style="font-size: 1em; margin: 10px auto;color:red;font-weight: light"> 如果喜欢我的文章，可以随便打赏，我会更有动力输出优质文章</div>
+                        <button id="rewardButton" disable="enable"
+                                onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                            <span>赏</span>
+                        </button>
+                        <div id="QR" style="display: none;">
+                            <div id="wechat" style="display: inline-block">
+                                <img id="wechat_qr" src="/assets/img/def/wechat.png" alt="wdxtub WeChat Pay"/>
+                                <p>微信打赏</p>
+                            </div>
+                    
+                            <div id="alipay" style="display: inline-block">
+                                <img id="alipay_qr" src="/assets/img/def/alipay.png" alt="wdxtub Alipay"/>
+                                <p>支付宝打赏</p>
+                            </div>
+                        </div>
                     </div>
-            
-                    <div id="alipay" style="display: inline-block">
-                        <img id="alipay_qr" src="/assets/img/def/alipay.png" alt="wdxtub Alipay">
-                        <p>支付宝打赏</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
