@@ -1,0 +1,20 @@
+.articles-line {
+    border:1;
+    line-height: 1px;
+    border-left: 200px solid #ddd;
+    border-right: 200px solid #ddd;
+    text-align: center;
+}
+
+.blogentry a,.note-editable a {
+    border-bottom: 1px dashed rgba(0,150,136,.9);
+}
+
+.blogentry p {
+    word-wrap: break-word;
+}
+
+#blogentry canvas.img-responsive {
+    max-width: 100%;
+    height: auto;
+}

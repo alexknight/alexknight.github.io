@@ -9,8 +9,10 @@ show_ad: false
 
 {% for category in site.categories %}
 <div class="category-item">
-    <div class="category-title">{{ category | first | capitalize }}</div>
-    <div class="category-count">{{ category | last | size }}</div>
+    <div class="blogentry">
+        <div class="category-title" >{{ category | first | capitalize }}({共{ category | last | size }}篇)</div>
+    </div>
+    <!-- <div class="category-count">{{ category | last | size }}</div> -->
 </div>
 
 {% for post in category.last %}
@@ -22,3 +24,12 @@ show_ad: false
 </div>
 {% endfor %}
 {% endfor %}
+
+.demo_line_01 {
+    padding: 0 20px 0;
+    margin: 20px 0;
+    line-height: 1px;
+    border-left: 200px solid #ddd;
+    border-right: 200px solid #ddd;
+    text-align: center;
+}
