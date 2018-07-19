@@ -1,51 +1,38 @@
 ---
-title: Alex的Notebook
+title: 博客
+permalink: /blog/ 
 ---
 <html>
 
 <head>
-    <meta charset="utf-8"/>        
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="theme-color" content="#151515">
-    <title>{{ page.title }}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ site.fav }}?">    
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/home.css" />
-    <link rel="stylesheet" type="text/css" href="./css/base.css" />
+    <title>{{ page.title }} - {{ site.name }}</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blog.css" />
+    <meta name="theme-color" content="#151515"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.fav }}?">        
+    <meta charset="utf-8"/>        
 </head>
 
 <body>
     <div class="content-wrap">
+        {% include header.html %}
         <div class="content-main">
-            <div class="base-info">
-                <div class="avatar"><img src="{{ site.logo }}" /></div>
-                <span class="title">{{ site.name }}</span>
-                <span class="bio">{{ site.bio }}</span>
-            </div>
-            <div class="divider"></div>
-            <div class="nav-tab">
-                <ul>
-                    {% for nav in site.navs %}
-                    <li><a href="{{ nav.href }}">{{ nav.label }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <br/>
-            <br/>
             <div class="post-list">
-                    {% for post in site.posts %}
-                    <a href="{{ post.url }}">
-                        <div class="post-item">
-                            <span class="post-title">{{ post.title }}</span>
-                            <span class="post-date">{{ post.date|date: "%m-%d,&nbsp;%Y" }}</span>
-                            <span class="post-excerpt">{{ post.excerpt }}</span>
-                            <div class="post-divider"></div>
-                        </div>
-                    </a>
-                    {% endfor %}
+                {% for post in site.posts %}
+                <a href="{{ post.url }}">
+                    <div class="post-item">
+                        <span class="post-title">{{ post.title }}</span>
+                        <span class="post-date">{{ post.date|date: "%m-%d,&nbsp;%Y" }}</span>
+                        <span class="post-excerpt">{{ post.excerpt }}</span>
+                        <div class="post-divider"></div>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
         </div>
     </div>
+    {% include footer.html %}
     {% include cnzz.html %}
 </body>
 
