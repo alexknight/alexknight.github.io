@@ -9,7 +9,9 @@ show_ad: false
 
 {% for category in site.categories %}
 <div class="category-item">
-    <div class="category-title" style="color:black; font-weight:bold; font-size: 125%">{{ category | first | capitalize }}</div>
+    <div class="category-title" style="color:black; font-weight:bold; font-size: 125%">
+        {{ category | first | capitalize }} - {{ category | last | size }}篇
+    </div>
     <!-- <div class="category-count">{{ category | last | size }}</div> -->
 </div>
 
