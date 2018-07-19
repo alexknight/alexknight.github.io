@@ -30,6 +30,20 @@ title: Alex的Notebook
                     {% endfor %}
                 </ul>
             </div>
+            <br/>
+            <br/>
+            <div class="post-list">
+                    {% for post in site.posts %}
+                    <a href="{{ post.url }}">
+                        <div class="post-item">
+                            <span class="post-title">{{ post.title }}</span>
+                            <span class="post-date">{{ post.date|date: "%m-%d,&nbsp;%Y" }}</span>
+                            <span class="post-excerpt">{{ post.excerpt }}</span>
+                            <div class="post-divider"></div>
+                        </div>
+                    </a>
+                    {% endfor %}
+            </div>
         </div>
     </div>
     {% include cnzz.html %}
