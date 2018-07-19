@@ -1,0 +1,208 @@
+.post-content {
+    word-wrap: break-word;
+    font-size: 0.78em;
+    line-height: 1.86;
+    font-weight: 400;
+    overflow: hidden;
+    letter-spacing: 0.03em;
+    color: #363636;
+    margin: 60px 15% 60px;
+    padding: 50px 6% 30px;
+    background: white;
+    color: black;
+}
+
+p {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.post-content img {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+    max-height: 600px;
+}
+
+.post-title {
+    display: block;
+    font-size: 1.45em;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+}
+
+H2 {
+    margin-bottom: 60px;
+    padding: 5px;
+    border-bottom: 2px LightGrey solid;
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 120%;
+    color: #666666;
+}
+
+H3 {
+    margin: 24px 0 12px;
+    font-size: 1.6em;
+    border-left: 8px solid #3a976d;
+    padding-left: 0.8em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    background: #ffffff;
+    color: #333333;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+H4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    width: 100%;
+    font: blod;
+    font-size: 1.25em;
+    color: #4c4c4c;
+    line-height: 120%;
+}
+
+H5 {
+    margin-top: 10px;
+    margin-bottom: -5px;
+    color: #5d5d60;
+    font-size: 1.08em;
+    line-height: 1.4;
+}
+
+li {
+    margin-left: 0px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    padding: 1px;
+    color: #228fcd;
+}
+
+a:hover {
+    color: gray;
+}
+
+blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    color: #454545;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 4px solid #9c9c9c;
+    background: #e2e2e2;
+    scroll-behavior: smooth;
+}
+
+blockquote ::selection {
+    background: white;
+}
+
+blockquote p {
+    text-indent: 0;
+    padding-left: 0.5em;
+}
+
+hr {
+    color: LightGrey;
+}
+
+code {
+    color: #e65c04;
+    -webkit-font-smoothing: antialiased;
+    font-family: Menlo, Monaco, Consolas, "Andale Mono", "lucida console", "Courier New", monospace;
+    font-size: 85%;
+}
+
+pre code {
+    font-size: 80%;
+}
+pre {
+    line-height: 1.68;
+    font-size: 1em;
+    overflow: auto;
+    font-weight: normal;
+}
+
+ul {
+    margin-left: -5px;
+}
+
+table {
+    margin: 20px 15% 20px 15%;
+    width: 70%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+table>tbody>tr:nth-of-type(odd) {
+    background-color: #f5f5f5;
+}
+
+table>tbody>tr:hover {
+    background-color: lightblue;
+}
+
+caption,
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+th,
+td {
+    border-bottom: 3px solid #ddd;
+    border-right: 1px solid #eee;
+}
+
+th {
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+td {
+    border-bottom-width: 1px;
+}
+
+#btn-to-top {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    display: none;
+    right: 32px;
+    bottom: 32px;
+    color: white;
+}
+
+#btn:hover {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .content-main {
+        padding-bottom: 120px;
+    }
+    .post-content {
+        font-size: 0.8em;
+        padding: 20px 5%;
+        width: 90%;
+        margin: 0;
+        letter-spacing: 0;
+    }
+    .post-title {
+        font-size: 1.05em;
+        width: 96%;
+        margin: 30px 10px;
+    }
+}

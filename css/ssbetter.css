@@ -1,0 +1,49 @@
+.ss_ad {
+    align-content: center;
+    background: #27a768;
+    padding: 16px 8px;
+    margin: 60px auto 30px;
+}
+
+.ss_ad a {
+    color: white;
+    padding: 4px 0;
+    text-decoration: none;
+    margin: 0;
+}
+
+.ss_ad a:hover {
+    color: #ffea00;
+}
+
+.ss_ad_title {
+    text-align: center;
+    font-size: 1.86em;
+    color: white;
+    font-weight: 300;
+}
+
+.ss_ad_subtitle {
+    font-size: 1.15em;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+.ss_ad_subtitle :hover {
+    color: gold;
+}
+
+.ss_ad_link {
+    text-align: center;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .ss_ad_subtitle {
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+    }
+}

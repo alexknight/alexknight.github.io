@@ -1,0 +1,46 @@
+highlighter: rouge
+gems: [jekyll-paginate]
+encoding: utf-8
+paginate: 8
+paginate_path: "page:num"
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+name: 写代码的猴子
+bio: 当猴子不写代码时，他在写些什么
+logo: "/img/monkey.jpg"
+url: http://jaeger.itscoder.com/
+email: im.houzi@gmail.com
+fav: "/favicon.ico"
+
+defaults:
+ -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      show_ad: true
+
+navs:
+  - 
+    href: /blog/
+    label: 博客
+  - 
+    href: /web_lab/
+    label: 实验室
+  -
+    href: /feed/
+    label: 订阅
+  - 
+    href: /about/
+    label: 关于
+
+# ---------------- #
+#      Socials     #
+# ---------------- #
+github_id: laobie
+weibo_id: xdmdhz
+zhihu_id: jaeger
+twitter_id: jaeger_chen

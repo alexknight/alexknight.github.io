@@ -1,0 +1,39 @@
+---
+title: 博客
+permalink: /blog/ 
+---
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{{ page.title }} - {{ site.name }}</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blog.css" />
+    <meta name="theme-color" content="#151515"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.fav }}?">        
+    <meta charset="utf-8"/>        
+</head>
+
+<body>
+    <div class="content-wrap">
+        {% include header.html %}
+        <div class="content-main">
+            <div class="post-list">
+                {% for post in site.posts %}
+                <a href="{{ post.url }}">
+                    <div class="post-item">
+                        <span class="post-title">{{ post.title }}</span>
+                        <span class="post-date">{{ post.date|date: "%m-%d,&nbsp;%Y" }}</span>
+                        <span class="post-excerpt">{{ post.excerpt }}</span>
+                        <div class="post-divider"></div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include footer.html %}
+    {% include cnzz.html %}
+</body>
+
+</html>
