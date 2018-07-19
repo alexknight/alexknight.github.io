@@ -24,16 +24,30 @@ permalink: /about/
                         <div style="font-size: 1em; margin: 10px auto;color:red;font-weight: light"> 如果喜欢我的文章，可以随便打赏，我会更有动力输出优质文章</div>
                         <button id="rewardButton" disable="enable"
                                 onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-                            <span>赏</span>
+                            <span style="
+                                display: inline-block;
+                                width: 60px;
+                                height: 60px;
+                                color: #fff;
+                                font-style: normal;
+                                font-variant: normal;
+                                font-stretch: normal;
+                                font-size: 2.4em;
+                                text-align: center;
+                                line-height: 60px;
+                                background: #f44336;
+                                -moz-border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                border-radius: 50%;">赏</span>
                         </button>
                         <div id="QR" style="display: none;">
                             <div id="wechat" style="display: inline-block">
-                                <img id="wechat_qr" src="/assets/img/def/wechat.png" alt="wdxtub WeChat Pay"/>
+                                <img id="wechat_qr" src="/assets/img/def/wechat.png" alt="wdxtub WeChat Pay" style="width: 180px;display: inline-block;margin: 0 1em"/>
                                 <p>微信打赏</p>
                             </div>
                     
                             <div id="alipay" style="display: inline-block">
-                                <img id="alipay_qr" src="/assets/img/def/alipay.png" alt="wdxtub Alipay"/>
+                                <img id="alipay_qr" src="/assets/img/def/alipay.png" alt="wdxtub Alipay" style="width: 180px;display: inline-block;margin: 0 1em"/>
                                 <p>支付宝打赏</p>
                             </div>
                         </div>
