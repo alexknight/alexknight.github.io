@@ -215,6 +215,7 @@ E/Aspectest: method: onCreate
 
 #### 1.返回函数
 由于`Python`有一个内建属性`__call__`，这个是一个很神奇的特性，只要某个类型中有`__call__`方法，我们可以把这个类型的对象当作函数来使用。这点是`Java`跟`C++`不一样的地方，Python 中的函数可以像普通变量一样当做参数传递给另外一个函数
+
 ~~~python
 In [134]: %cpaste
 Pasting code; enter '--' alone on the line to stop or use Ctrl-D.
@@ -246,8 +247,8 @@ Out[138]:
 ...
  '__setattr__',
 ]
-
 ~~~
+
 ### 2.无参装饰器
 
 ~~~python
@@ -267,8 +268,10 @@ def myfunc():
  
 myfunc()
 ~~~
+
 ### 3.定参函数装饰器
 函数带参数，我们只要把装饰器最内层函数跟调用函数的参数列表保持一致即可。
+
 ~~~python
 def deco(func):
     def _deco(a, b):
@@ -287,6 +290,7 @@ myfunc(1, 2)
 ~~~
 
 ### 4.多参函数装饰器
+
 ~~~python
 def deco(func):
     def _deco(*args, **kwargs):
@@ -312,6 +316,7 @@ myfunc2(1, 2, 3)
 
 ### 5.带参装饰器
 装饰器带参数，则装饰器函数则变成了三层，我们需要在最外层把装饰器的参数传递进去。
+
 ~~~python
 def deco(arg):
     def _deco(func):
