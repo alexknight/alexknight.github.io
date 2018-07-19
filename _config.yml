@@ -11,7 +11,7 @@ name: Alex的Notebook
 bio: 雄关漫道真如铁，而今迈步从头越
 logo: "/img/sin.jpg"
 # url: http://jaeger.itscoder.com/
-email: im.houzi@gmail.com
+email: qqliao_shu_feng@163.com
 fav: "/favicon.ico"
 
 defaults:
@@ -27,9 +27,6 @@ navs:
   - 
     href: /blog/
     label: 博客
-  # - 
-  #   href: /web_lab/
-  #   label: 实验室
   -
     href: /feed/
     label: 订阅
