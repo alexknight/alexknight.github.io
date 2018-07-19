@@ -16,6 +16,8 @@
     font-size: 0.9em;
     letter-spacing: 0.12em;
     line-height: 30px;
+    font-weight: bold;
+    color: #236680;
 }
 
 .nav-home img {
@@ -37,6 +39,7 @@
 .nav-tab-others {
     display: inline-block;
     margin-left: 80px;
+    color: #236680;
 }
 
 .nav-tab-others li {
@@ -52,7 +55,7 @@
 }
 
 .nav-tab-others a {
-    color: white;
+    color: #236680;
     text-decoration: none;
     font-size: 0.9em;
 }
@@ -64,6 +67,7 @@
 @media screen and (max-width: 768px) {
     .header {
         margin: 30px 5% 20px;
+        color: #236680;
     }
     .module-title {
         font-size: 2em;
