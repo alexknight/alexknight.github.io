@@ -1,0 +1,47 @@
+---
+title: 目录
+permalink: /articles/
+---
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/post.css" />
+    <link rel="stylesheet" type="text/css" href="/css/blog.css" />
+    <title>{{ page.title }} - {{ site.name }}</title>    
+</head>
+
+<body>
+    <div class="content-wrap">
+        <div class="content-main">
+            {% include header.html %}
+            <div class="post-content">
+                
+                {% for category in site.categories %}
+                    <div class="post-item">
+                        <div class="category-title" style="color:black; font-weight:bold; font-size: 140%">
+                            {{ category | first | capitalize }} - 共{{ category | last | size }}篇
+                        </div>
+                        <!-- <div class="category-count">{{ category | last | size }}</div> -->
+                        <br/>
+                        {% for post in category.last %}
+                            <div class="article-item">
+                                <div class="article-title">
+                                    <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>（<span class="article-date">{{post.date | date:"%Y-%m-%d"}}）</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <div class="post-divider"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include footer.html %}
+    {% include cnzz.html %}
+</body>
+
+</html>
