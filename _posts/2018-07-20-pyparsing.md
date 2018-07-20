@@ -12,20 +12,21 @@ category: Python
 - "我们需要一个简单的命令行解释器..."
 - "我们的源代码需要移植到新API集上..."
 - "我们需要设计自己的DSL"
+
 通常简单点的，可能直接会使用`awk`，复杂点的可能就是结合正则表达式了。但在这里要推荐一种比较小众的方式，使用`Pyparsing`来定制自己的解析器。而上面的场景，都可以用`Pyparsing`来实现。下面一起看看`Pyparsing`是什么。
 
 ## 二.`Pyparsing`介绍
 那`Pyparsing`是什么呢？简单来说就是解析表达式使用标准的`python`类标记和符号表示。因为它的规则可读性很强，因此很方便维护以及拓展，在中等复杂的需求中，可以拿来使用。 复杂点说，`Pyparsing`是：
 
 - 100%纯`python`,没有的动态链接库(`DLLs`)或者共享库包含其中，所以你可以在`python2.3`能够通过编译的任何地方使用它。
-- 解析表达式使用标准的python类标记和符号表示。没有单独的代码生成过程也没有特殊符号和标记，这将使得你的应用易于开发，理解和维护。
+- 解析表达式使用标准的`python`类标记和符号表示。没有单独的代码生成过程也没有特殊符号和标记，这将使得你的应用易于开发，理解和维护。
 - 对于常见的模式准备了辅助方法:
     - `C`,`C++`,`Java`,`Python`,`HTML`注释
     - 引号字符串(使用单个或双引号，除了',''转义情况外)
     - `HTML`与`XML`标签(包含上下级以及属性操作)
     - 逗号分隔以及被限制的列表表达式
 - 轻量级封装-`Pyparsing`的代码包含在单个`python`文件中，容易放进`site-packages`目录下，或者被你的应用直接包含。
-- 宽松的许可证，MIT许可证使得你可以随意进行非商用或商业应用。
+- 宽松的许可证，`MIT`许可证使得你可以随意进行非商用或商业应用。
 可能这么说还是比较抽象，直接看下面的例子吧。
 
 ## 三.`Pyparsing`使用演示
@@ -65,12 +66,10 @@ xit       763 .....java.lang.ClassLoader.loadClass (Ljava/lang/String;)Ljava/lan
 
 可以看到文件格式比较统一，其实正则很好去解析，但这里为了方便说明，用`pyparsing`来实现一个解析器。 将文件进行分解，假设需要解析的是`Trace` (`threadID action usecs class.method signature`)之后的数据
 - 普通分割标识
-    - 分号 python semiFlag = Literal(";")
-    - 忽略标识
-
-~~~bash
-dotFlag = Suppress(Literal("."))
-~~~
+    - 分号  
+    `semiFlag = Literal(";")`
+    - 忽略标识  
+    `dotFlag = Suppress(Literal("."))`
 
 - `threadID`标识
 
@@ -97,7 +96,7 @@ clsField = Word(alphas+".")
 methodField = Combine("(" + ZeroOrMore(Word(alphas + ";/")) + ")" + Word(alphas + "/") + semiFlag)
 ~~~
 
-- `signature`标识
+- `signature`标识  
 可以看到跟`clsField`一致
 
 所以整合起来，脚本可以很快写出来（这里没有适配部分异常情况，直接`try..except`处理简单看看效果）
