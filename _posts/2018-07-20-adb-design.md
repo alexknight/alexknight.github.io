@@ -23,18 +23,18 @@ https://github.com/aosp-mirror/platform_system_core/tree/master/adb
 '`adbd`'运行在`Android`设备/模拟器中中。其目的是连接到adb服务器（通过`USB`设备，通过`TCP`模拟器连接）并提供少许客户端运行在主机上的服务。
 `adb`服务器连接`adbd`成功时则判断设备处于`online`状态，否则，该设备处于`offline`状态，这意味着`adb`服务器检测到新的设备/仿真器，但不能连接到`adbd`守护进程。
 
-#### 3.adb命令行客户端
+#### 3.`adb`命令行客户端
 
-主要用于adb的shell环境或者脚本环境。它首先尝试在主机上找到adb服务器，如果没有找到，将自动启动一个。然后，客户端将其服务请求发送到adb server。
+主要用于`adb`的`shell`环境或者脚本环境。它首先尝试在主机上找到adb服务器，如果没有找到，将自动启动一个。然后，客户端将其服务请求发送到`adb server`。
 
 #### 4.服务
 
-- host service
+- `host service`
 
-这种类型的服务在adb server中运行因此不需要与客户端通信，比较典型的是"adb devices"这个指令，它只需要返回当前已知的设备列表跟状态即可。
-- local services
+这种类型的服务在`adb server`中运行因此不需要与客户端通信，比较典型的是"`adb devices`"这个指令，它只需要返回当前已知的设备列表跟状态即可。
 
-这些服务一般运行在adbd daemon中，或者运行在设备本身，他的角色包括创建client跟server端的连接，接着传输数据。
+- `local services`
+这些服务一般运行在`adbd daemon`中，或者运行在设备本身，他的角色包括创建`client`跟`server`端的连接，接着传输数据。
 
 ## 四.协议细节
 
