@@ -3,6 +3,38 @@ body {
     font-size: 20px;
 }
 
+.post-directory {
+    font-size: 14px;
+    background: #fff;
+    overflow: hidden;
+    width: 300px;
+    padding-bottom: 1em;
+    border: 1px solid #efefef;
+    color: #999;
+}
+
+.post-directory ul,
+.post-directory ol {
+    padding-left: 1.5em;
+    list-style: none;
+}
+
+.post-directory strong {
+    border-left: 5px solid #999;
+    padding: 2px 5px 2px 15px;
+}
+
+.post-directory a {
+    text-decoration: none;
+    color: #bababa;
+}
+
+.post-directory a:hover,
+.post-directory a:active,
+.post-directory a.on {
+    color: #4183c4;
+}
+
 .post-list {
     margin: 60px 15% 60px;
     padding: 40px 6% 30px;

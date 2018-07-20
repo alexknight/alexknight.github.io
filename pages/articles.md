@@ -23,7 +23,8 @@ show_ad: false
         <span class="article-date">{{post.date | date:"%Y %m-%d"}}</span>
     </div>
 </div>
+
 {% endfor %}
 <br />
-<div class="divider"></div>
+
 {% endfor %}
