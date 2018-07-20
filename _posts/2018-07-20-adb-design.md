@@ -3,11 +3,12 @@ title: ADB的架构设计
 category: Android
 ---
 
-`ADB`，即 [Android Debug Bridge](https://developer.android.com/studio/command-line/adb.html)，它是`Android`开发/测试人员不可替代的强大工具，也是 `Android`设备玩家的好玩具。如果想更多了解`ADB`，可以查看一个开源项目[Awesome Adb](https://github.com/mzlogin/awesome-adb)。本文不讲`ADB`的用法，只简单介绍下它的设计架构。
+`ADB`，即 [`Android Debug Bridge`](https://developer.android.com/studio/command-line/adb.html)，它是`Android`开发/测试人员不可替代的强大工具，也是 `Android`设备玩家的好玩具。如果想更多了解`ADB`，可以查看一个开源项目[`Awesome Adb`](https://github.com/mzlogin/awesome-adb)。本文不讲`ADB`的用法，只简单介绍下它的设计架构。
 
 ## 一.`ADB`代码地址
-
+~~~bash
 https://github.com/aosp-mirror/platform_system_core/tree/master/adb 
+~~~
 
 ## 二.`adb`架构
 ![adb-design](/img/postimg/adb.png)
