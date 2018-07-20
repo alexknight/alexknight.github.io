@@ -80,9 +80,8 @@ body {
     font-weight: 300;
     display: block;
     line-height: 1.5em;
-    font-size: 0.76em;
+    letter-spacing:0;
     margin: 15px 0;
-    letter-spacing: 0.14em;
 }
 
 .post-item .post-excerpt p {
