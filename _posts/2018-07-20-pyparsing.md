@@ -1,5 +1,5 @@
 ---
-title: 使用pyparsing来定制自己的解析器
+title: 使用Pyparsing来定制自己的解析器
 category: Python
 ---
 
